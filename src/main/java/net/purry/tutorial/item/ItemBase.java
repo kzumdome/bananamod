@@ -11,6 +11,8 @@ public class ItemBase extends Item {
         this.name = name;
         setUnlocalizedName(name);
         setRegistryName(name);
+
+       // setCreativeTab(TutorialMod.creativeTab);
     }
 
     public void registerItemModel() {

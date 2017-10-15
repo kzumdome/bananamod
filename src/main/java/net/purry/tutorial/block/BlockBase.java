@@ -18,20 +18,22 @@ public class BlockBase extends Block {
 
         setUnlocalizedName(name);
         setRegistryName(name);
+
+        //setCreativeTab(TutorialMod.creativeTab);
     }
 
-    public void registerItemModel(Item itemBlock) {
-        TutorialMod.proxy.registerItemRenderer(itemBlock, 0, name);
-    }
-
-    public Item createItemBlock() {
-        return new ItemBlock(this).setRegistryName(getRegistryName());
+    public void registerItemModel(Item item) {
+        TutorialMod.proxy.registerItemRenderer(item, 0, name);
     }
 
     @Override
     public BlockBase setCreativeTab(CreativeTabs tab) {
         super.setCreativeTab(tab);
         return this;
+    }
+
+    public Item createItemBlock() {
+        return new ItemBlock(this).setRegistryName(getRegistryName());
     }
 
 }
